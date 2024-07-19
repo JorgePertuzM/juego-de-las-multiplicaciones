@@ -224,14 +224,14 @@ footer {
     .question-box {
         font-size: 8px; /* Reducido para mejor ajuste */
         padding: 5px 15px;
-        color: #d60f9a;
+        /*color: #d60f9a;*/
     }
 
     .option {
         padding: 8px 15px;
         font-size: 13px; /* Ajustado para mejor legibilidad */
         margin: 5px; /* Reducido para mejor disposición */
-        color: #d60f9a;
+        /*color: #d60f9a;*/
     }
 
     .progress-bar-container {
@@ -279,14 +279,14 @@ footer {
     .question-box {
         font-size: 18px; /* Reducido para dispositivos más pequeños */
         padding: 10px;
-        color: #1e08e2;
+        /*color: #1e08e2;*/
     }
 
     .option {
         padding: 8px 12px; /* Reducido para mejor ajuste */
         font-size: 14px; /* Ajustado para mejor legibilidad */
         margin: 5px;
-        color: #1e08e2;
+        /*color: #1e08e2;*/
     }
 
     .progress-bar-container {
