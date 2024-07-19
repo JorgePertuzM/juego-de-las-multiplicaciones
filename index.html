@@ -4,37 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Multiplicación</title>
+    <!-- Enlaza la hoja de estilos principal del juego -->
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- Enlaza la hoja de estilos para SweetAlert2, una librería para mostrar alertas más atractivas -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
+    <!-- Pantalla de inicio donde se ingresa el nombre del jugador y se inicia el juego -->
     <div class="container" id="start-screen">
         <h1>Juego de Multiplicación</h1>
+        <!-- Campo para que el jugador ingrese su nombre -->
         <input type="text" id="player-name" placeholder="Ingresa tu nombre">
+        <!-- Botón para empezar el juego -->
         <button id="start-button">Jugar</button>
     </div>
+    
+    <!-- Pantalla del juego que se muestra cuando el juego está en curso -->
     <div class="container" id="game-screen" style="display: none;">
         <h1>Juego de Multiplicación</h1>
+        <!-- Sección del perfil del jugador con estadísticas -->
         <div id="profile">
+            <!-- Muestra el nombre del jugador -->
             <p id="player">Jugador: <span id="player-display"></span></p>
+            <!-- Muestra el nivel actual del jugador -->
             <p id="level">Nivel: 0</p>
+            <!-- Muestra el puntaje acumulado -->
             <p id="score">Puntaje: 0</p>
+            <!-- Muestra el número de errores cometidos -->
             <p id="errors">Errores: 0</p>
         </div>
+        <!-- Barra de progreso que indica el avance hacia el siguiente nivel -->
         <div class="progress-bar-container">
             <div class="progress-bar" id="progress-bar"></div>
             <div class="progress-text" id="progress-text">0%</div>
         </div>
+        <!-- Sección del juego donde se muestra la pregunta y las opciones -->
         <div id="game">
+            <!-- Caja de la pregunta actual -->
             <div class="question-box">
                 <p id="question"></p>
             </div>
+            <!-- Contenedor para las opciones de respuesta -->
             <div id="options" class="options-container"></div>
         </div>
         <br>
+        <!-- Botones de comodines disponibles en el juego -->
+        <!-- Botón para cambiar la pregunta actual -->
         <button id="skip-button" onclick="skipQuestion()" disabled>Cambiar pregunta</button>
+        <!-- Botón para eliminar dos opciones incorrectas -->
+        <button id="hint-button" onclick="useHint()">50 / 50</button>
+        <!-- Botón para mostrar una encuesta de ayuda -->
+        <button id="survey-button" onclick="showSurvey()">Encuesta</button>
     </div>
+
+    <!-- Pie de página que permanece fijo en la parte inferior de la pantalla -->
+    <footer>
+        <p>Diseñado por Ingeniero Jorge Pertuz M. <br> Todos los derechos reservados.</p>
+    </footer>
+    
+    <!-- Enlaza la librería SweetAlert2 para mostrar alertas -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="./js/script.js"></script>
+    <!-- Enlaza el archivo JavaScript con la lógica del juego -->
+    <script src="./js/app.js"></script>
 </body>
 </html>

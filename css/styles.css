@@ -1,14 +1,20 @@
+/* Estilo global del cuerpo */
 body {
     font-family: Arial, sans-serif;
     background-color: #E0F7FA;
     margin: 0;
+    padding-top: 125px;
+    padding-bottom: 65px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     color: #333;
+    flex-direction: column;
+    max-height: 90vh; /* Ajuste para pantallas grandes */
 }
 
+/* Estilo del contenedor principal del juego */
 .container {
     text-align: center;
     padding: 20px;
@@ -17,12 +23,16 @@ body {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+    flex: 1;
+    margin-bottom: 150px; /* Ajuste para pantallas grandes */
 }
 
+/* Estilo del encabezado */
 h1 {
     color: #219C90;
 }
 
+/* Estilo del campo de texto */
 input[type="text"] {
     padding: 10px;
     width: 80%;
@@ -31,6 +41,7 @@ input[type="text"] {
     border: 1px solid #ccc;
 }
 
+/* Estilo general de los botones */
 button {
     padding: 10px 20px;
     border: none;
@@ -41,11 +52,19 @@ button {
     transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Estilo del botón al pasar el cursor sobre él */
 button:hover {
     background-color: #17a085;
     transform: scale(1.1);
 }
 
+/* Estilo de los botones deshabilitados */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estilo de la caja de la pregunta */
 .question-box {
     background-color: #219C90;
     color: #fff;
@@ -53,23 +72,25 @@ button:hover {
     border-radius: 10px;
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-size: 22px; /* Aumentamos el tamaño de la fuente */
-    text-align: center; /* Centrar el texto */
-    font-weight: bold; /* Hacer el texto en negrita */
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
 }
 
-
+/* Estilo específico para la pregunta */
 #question {
     font-size: 24px;
     margin: 0;
 }
 
+/* Contenedor de las opciones de respuesta */
 .options-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
+/* Estilo de cada opción de respuesta */
 .option {
     display: inline-block;
     margin: 10px;
@@ -83,24 +104,29 @@ button:hover {
     color: #333;
 }
 
+/* Estilo de la opción de respuesta al pasar el cursor sobre ella */
 .option:hover {
     background-color: #FFC700;
     transform: scale(1.1);
 }
 
+/* Contenedor para la puntuación y el perfil */
 .score-container, #profile {
     margin-top: 20px;
 }
 
+/* Estilo para la puntuación, errores, jugador y nivel */
 #score, #errors, #player, #level {
     font-size: 18px;
     margin: 5px 0;
 }
 
+/* Estilo para los errores */
 #error {
     color: #EE4E4E;
 }
 
+/* Estilo de la barra de progreso */
 .progress-bar-container {
     position: relative;
     width: 100%;
@@ -110,6 +136,7 @@ button:hover {
     height: 20px;
 }
 
+/* Estilo de la barra de progreso actual */
 .progress-bar {
     width: 0;
     height: 100%;
@@ -118,6 +145,7 @@ button:hover {
     transition: width 0.3s;
 }
 
+/* Texto que muestra el porcentaje completado en la barra de progreso */
 .progress-text {
     position: absolute;
     width: 100%;
@@ -127,4 +155,160 @@ button:hover {
     line-height: 20px;
     font-weight: bold;
     color: #333;
+}
+
+/* Estilo específico para los botones de comodines */
+#skip-button, #hint-button, #survey-button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #219C90;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Estilo de los botones de comodines al pasar el cursor sobre ellos */
+#skip-button:hover, #hint-button:hover, #survey-button:hover {
+    background-color: #17a085;
+    transform: scale(1.05);
+}
+
+/* Estilo de los botones de comodines deshabilitados */
+#skip-button:disabled, #hint-button:disabled, #survey-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #219C90;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+    height: 55px;
+    font-size: 13px;
+    border-top: 3px solid #FFC700;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/*Mi celular*/
+/* Media query para dispositivos móviles horizontales */
+@media (max-width: 1023px) {
+    body {
+        min-height: 100vh;
+        margin-top: 85px;
+        margin-bottom: 125px;
+        padding: 0;
+    }
+
+    .container {
+        margin-bottom: 50px;
+        padding: 15px;
+        max-width: 85%;
+        width: auto;
+        font-size: 13px;
+        margin-bottom: 0px; /* Asegura suficiente espacio para el footer */
+        position: relative; /* Asegura que el padding-bottom se aplique correctamente */
+    }
+
+    .question-box {
+        font-size: 8px; /* Reducido para mejor ajuste */
+        padding: 5px 15px;
+        color: #d60f9a;
+    }
+
+    .option {
+        padding: 8px 15px;
+        font-size: 13px; /* Ajustado para mejor legibilidad */
+        margin: 5px; /* Reducido para mejor disposición */
+        color: #d60f9a;
+    }
+
+    .progress-bar-container {
+        height: 15px; /* Reducido para dispositivos más estrechos */
+    }
+
+    .progress-text {
+        line-height: 15px;
+        font-size: 13px; /* Ajustado para mejor ajuste */
+    }
+
+    /* Ajuste específico para botones de comodines */
+    #skip-button, #hint-button, #survey-button {
+        font-size: 13px; /* Ajustado para mejor legibilidad en pantallas estrechas */
+        width: 100%;
+        max-width: 95%;
+    }
+
+    /* Estilo del pie de página */
+    footer {
+        padding: 0px;
+        height: 38px;
+        font-size: 10px;
+    }
+
+}
+
+/*Mi celular*/
+/* Media query adicional para pantallas más pequeñas en orientación Vertical */
+@media (max-width: 767px) {
+    body {
+        min-height: 100vh;
+        margin-top: 15px;
+        margin-bottom: 50px;
+        padding: 0;
+    }
+
+    .container {
+        margin-bottom: 5px;
+        padding: 10px;
+        max-width: 100%;
+        width: auto;
+    }
+
+    .question-box {
+        font-size: 18px; /* Reducido para dispositivos más pequeños */
+        padding: 10px;
+        color: #1e08e2;
+    }
+
+    .option {
+        padding: 8px 12px; /* Reducido para mejor ajuste */
+        font-size: 14px; /* Ajustado para mejor legibilidad */
+        margin: 5px;
+        color: #1e08e2;
+    }
+
+    .progress-bar-container {
+        height: 12px; /* Reducido para dispositivos aún más estrechos */
+    }
+
+    .progress-text {
+        line-height: 12px;
+        font-size: 12px; /* Ajustado para mejor ajuste */
+    }
+
+    /* Ajuste específico para botones de comodines */
+    #skip-button, #hint-button, #survey-button {
+        font-size: 14px; /* Ajustado para mejor legibilidad en pantallas pequeñas */
+        width: 100%;
+        max-width: 90%;
+    }
+
+    /* Estilo del pie de página */
+    footer {
+        padding: 0px;
+        height: 38px;
+        font-size: 10px;
+    }
 }
