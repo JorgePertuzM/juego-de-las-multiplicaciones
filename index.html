@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Multiplicación</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <div class="container" id="start-screen">
+        <h1>Juego de Multiplicación</h1>
+        <input type="text" id="player-name" placeholder="Ingresa tu nombre">
+        <button id="start-button">Jugar</button>
+    </div>
+    <div class="container" id="game-screen" style="display: none;">
+        <h1>Juego de Multiplicación</h1>
+        <div id="profile">
+            <p id="player">Jugador: <span id="player-display"></span></p>
+            <p id="level">Nivel: 0</p>
+            <p id="score">Puntaje: 0</p>
+            <p id="errors">Errores: 0</p>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+            <div class="progress-text" id="progress-text">0%</div>
+        </div>
+        <div id="game">
+            <div class="question-box">
+                <p id="question"></p>
+            </div>
+            <div id="options" class="options-container"></div>
+        </div>
+        <br>
+        <button id="skip-button" onclick="skipQuestion()" disabled>Cambiar pregunta</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
